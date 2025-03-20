@@ -6,5 +6,5 @@ import mate.academy.rickandmorty.dto.internal.CharacterDto;
 public interface CharacterService {
     List<CharacterDto> getAll();
 
-    CharacterDto getByName(String name);
+    List<CharacterDto> getByName(String name);
 }

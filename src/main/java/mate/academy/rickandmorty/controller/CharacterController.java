@@ -21,7 +21,7 @@ public class CharacterController {
     }
 
     @GetMapping(params = "name")
-    public CharacterDto getByName(@RequestParam String name) {
+    public List<CharacterDto> getByName(@RequestParam String name) {
         return characterService.getByName(name);
     }
 }

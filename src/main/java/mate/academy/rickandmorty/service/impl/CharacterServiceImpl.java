@@ -22,10 +22,9 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     @Override
-    public CharacterDto getByName(String name) {
-        return repository.findByNameContainingIgnoreCase(name)
+    public List<CharacterDto> getByName(String name) {
+        return repository.findByNameContainingIgnoreCase(name).stream()
                 .map(mapper::toDto)
-                .orElseThrow(() -> new RuntimeException("Cannot "
-                        + "find character with name: " + name));
+                .toList();
     }
 }
